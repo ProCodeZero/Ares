@@ -1,0 +1,235 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.17 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.17">
+  <diagram name="Page-1" id="82xRH9C8-Cmo5wjpE0Rn">
+    <mxGraphModel dx="1434" dy="836" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="z758-tEZIzRVtvB0KCsy-3" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="244" y="345" width="480" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="z758-tEZIzRVtvB0KCsy-1" target="z758-tEZIzRVtvB0KCsy-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-1" value="Логи приложения" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="104" y="405" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="z758-tEZIzRVtvB0KCsy-2" target="z758-tEZIzRVtvB0KCsy-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-2" value="Метрики приложения" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="104" y="655" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-4" value="&lt;b&gt;Сбор данных&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="244" y="345" width="480" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-13" value="Ввод" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;verticalAlign=bottom;" vertex="1" parent="1">
+          <mxGeometry x="274" y="385" width="120" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=1;" edge="1" parent="1" source="z758-tEZIzRVtvB0KCsy-6" target="z758-tEZIzRVtvB0KCsy-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-6" value="Адаптер сбора логов (плагин для fluentd)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#007FFF;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="284" y="405" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=1;" edge="1" parent="1" source="z758-tEZIzRVtvB0KCsy-7" target="z758-tEZIzRVtvB0KCsy-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-7" value="Адаптер сбора метрик (плагин для fluentd)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#007FFF;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="284" y="655" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-14" value="Логика" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;verticalAlign=bottom;" vertex="1" parent="1">
+          <mxGeometry x="424" y="385" width="120" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=1;" edge="1" parent="1" source="z758-tEZIzRVtvB0KCsy-8" target="z758-tEZIzRVtvB0KCsy-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=1;" edge="1" parent="1" source="z758-tEZIzRVtvB0KCsy-8" target="z758-tEZIzRVtvB0KCsy-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-8" value="Маршрутизация передачи логов и метрик в другие модули (fluentd)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#007FFF;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="434" y="535" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-15" value="Вывод" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;verticalAlign=bottom;" vertex="1" parent="1">
+          <mxGeometry x="574" y="385" width="120" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-11" value="Адаптер для модуля анализа (плагин fluentd)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#007FFF;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="584" y="405" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-16" value="Адаптер для модуля хранения (плагин для fluentd)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#007FFF;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="584" y="655" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-25" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="1001" y="64" width="480" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-26" value="&lt;b&gt;Анализ логов&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1001" y="64" width="480" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-27" value="Ввод" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;verticalAlign=bottom;" vertex="1" parent="1">
+          <mxGeometry x="1031" y="104" width="120" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=1;" edge="1" parent="1" source="z758-tEZIzRVtvB0KCsy-29" target="z758-tEZIzRVtvB0KCsy-35">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-29" value="Адаптер модуля анализа логов" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#007FFF;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1041" y="254" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-32" value="Логика" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;verticalAlign=bottom;" vertex="1" parent="1">
+          <mxGeometry x="1181" y="104" width="120" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-59" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=classic;startFill=1;curved=1;" edge="1" parent="1" source="z758-tEZIzRVtvB0KCsy-35" target="z758-tEZIzRVtvB0KCsy-57">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-35" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;&lt;b&gt;ИИ&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#007FFF;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1191" y="124" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-36" value="Вывод" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;verticalAlign=bottom;" vertex="1" parent="1">
+          <mxGeometry x="1331" y="104" width="120" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-38" value="API для потребителей (java backend)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#007FFF;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1341" y="374" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-39" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="1001" y="625" width="480" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-40" value="&lt;b&gt;Хранение данных&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1001" y="625" width="480" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-41" value="Ввод" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;verticalAlign=bottom;" vertex="1" parent="1">
+          <mxGeometry x="1031" y="665" width="120" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=1;" edge="1" parent="1" source="z758-tEZIzRVtvB0KCsy-43" target="z758-tEZIzRVtvB0KCsy-49">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-43" value="Адаптер сбора логов (плагин Apache solr)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#007FFF;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1041" y="815" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-46" value="Логика" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;verticalAlign=bottom;" vertex="1" parent="1">
+          <mxGeometry x="1181" y="665" width="120" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=1;" edge="1" parent="1" source="z758-tEZIzRVtvB0KCsy-49" target="z758-tEZIzRVtvB0KCsy-51">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=1;" edge="1" parent="1" source="z758-tEZIzRVtvB0KCsy-49" target="z758-tEZIzRVtvB0KCsy-52">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-49" value="Индексация логов (Apache solr)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#007FFF;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1191" y="815" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-50" value="Вывод" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;verticalAlign=bottom;" vertex="1" parent="1">
+          <mxGeometry x="1331" y="665" width="120" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-51" value="UI (Kibana)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#007FFF;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1341" y="685" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-52" value="API для мониторинга" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#007FFF;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1341" y="935" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=1;" edge="1" parent="1" source="z758-tEZIzRVtvB0KCsy-11" target="z758-tEZIzRVtvB0KCsy-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-55" value="Фронтенд&lt;br&gt;(React)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#007FFF;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1341" y="254" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-60" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=classic;startFill=1;curved=1;" edge="1" parent="1" source="z758-tEZIzRVtvB0KCsy-57" target="z758-tEZIzRVtvB0KCsy-58">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-57" value="Хранилище данных (PostgreSQL)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#007FFF;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1191" y="254" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-61" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;curved=1;" edge="1" parent="1" source="z758-tEZIzRVtvB0KCsy-58" target="z758-tEZIzRVtvB0KCsy-38">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-62" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;curved=1;" edge="1" parent="1" source="z758-tEZIzRVtvB0KCsy-58" target="z758-tEZIzRVtvB0KCsy-55">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-58" value="Система управления интеграциями с результатами работы ИИ (java backend)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#007FFF;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1191" y="374" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-66" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="1828" y="625" width="480" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-67" value="&lt;b&gt;Мониторинг&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1828" y="625" width="480" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-68" value="Ввод" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;verticalAlign=bottom;" vertex="1" parent="1">
+          <mxGeometry x="1858" y="665" width="120" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-69" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=1;" edge="1" parent="1" source="z758-tEZIzRVtvB0KCsy-70" target="z758-tEZIzRVtvB0KCsy-74">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-70" value="Адаптер интеграции для Apache solr" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#007FFF;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1868" y="815" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-71" value="Логика" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;verticalAlign=bottom;" vertex="1" parent="1">
+          <mxGeometry x="2008" y="665" width="120" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-72" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=1;" edge="1" parent="1" source="z758-tEZIzRVtvB0KCsy-74" target="z758-tEZIzRVtvB0KCsy-76">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-74" value="Мониторинг состояния систем (java backend)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#007FFF;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="2018" y="815" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-75" value="Вывод" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;verticalAlign=bottom;" vertex="1" parent="1">
+          <mxGeometry x="2158" y="665" width="120" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-76" value="UI (Graphana)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#007FFF;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="2168" y="815" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-65" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=1;" edge="1" parent="1" source="z758-tEZIzRVtvB0KCsy-16" target="z758-tEZIzRVtvB0KCsy-43">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-79" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=1;" edge="1" parent="1" source="z758-tEZIzRVtvB0KCsy-52" target="z758-tEZIzRVtvB0KCsy-70">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-80" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="1828" y="64" width="632" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-81" value="&lt;b&gt;База знаний по инцидентам&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1828" y="64" width="632" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-82" value="Ввод" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;verticalAlign=bottom;" vertex="1" parent="1">
+          <mxGeometry x="1858" y="104" width="120" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-83" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=1;" edge="1" parent="1" source="z758-tEZIzRVtvB0KCsy-84" target="z758-tEZIzRVtvB0KCsy-87">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-84" value="API (java backend)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#007FFF;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1868" y="254" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-85" value="Логика" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;verticalAlign=bottom;" vertex="1" parent="1">
+          <mxGeometry x="2008" y="104" width="120" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-86" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=1;" edge="1" parent="1" source="z758-tEZIzRVtvB0KCsy-87" target="z758-tEZIzRVtvB0KCsy-89">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-92" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;startArrow=classic;startFill=1;curved=1;" edge="1" parent="1" source="z758-tEZIzRVtvB0KCsy-87" target="z758-tEZIzRVtvB0KCsy-91">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-87" value="Система управления базой знаний (java backend)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#007FFF;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="2018" y="130" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-88" value="Вывод" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;verticalAlign=bottom;" vertex="1" parent="1">
+          <mxGeometry x="2158" y="104" width="120" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-95" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="z758-tEZIzRVtvB0KCsy-89" target="z758-tEZIzRVtvB0KCsy-94">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-89" value="API для фронтетда (java backend)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#007FFF;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="2168" y="254" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-90" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=1;" edge="1" parent="1" source="z758-tEZIzRVtvB0KCsy-38" target="z758-tEZIzRVtvB0KCsy-84">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-91" value="Хранилище данных (PostgreSQL)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#007FFF;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="2018" y="374" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-93" value="Фронтенд" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;verticalAlign=bottom;" vertex="1" parent="1">
+          <mxGeometry x="2308" y="104" width="120" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="z758-tEZIzRVtvB0KCsy-94" value="Фронтенд &lt;br&gt;(React)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#007FFF;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="2318" y="254" width="100" height="100" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
