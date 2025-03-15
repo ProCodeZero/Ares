@@ -10,6 +10,11 @@ services:
     environment:
       KAFKA_ADVERTISED_HOST_NAME: kafka
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+    healthcheck:
+      test: ['CMD', 'kafka-topics.sh', '--list', '--bootstrap-server', 'localhost:9092']
+      interval: 10s
+      timeout: 5s
+      retries: 10
     depends_on:
       - zookeeper
   postgres:
@@ -18,8 +23,12 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: root
       POSTGRES_DB: ares_db
-    ports: ['5432:5432']
-    volumes: -postgres_data:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    depends_on:
+      - zookeeper
   data-ingestion:
     build: ./backend/data-ingestion
     ports:
@@ -30,7 +39,11 @@ services:
       KAFKA_BROKER: kafka:9092
   analysis:
     build: ./backend/analysis
-    ports: ['8002:8002']
-    depends_on: [kafka, postgres]
+    ports:
+      - '8002:8002'
+    depends_on:
+      - kafka
+      - postgres
 
-volumes: postgres_data
+volumes:
+  postgres_data:

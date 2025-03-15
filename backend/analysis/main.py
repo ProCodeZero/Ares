@@ -1,11 +1,14 @@
-from fastapi import FastAPI
-from kafka import KafkaConsumer
 import json
+import logging
 import pandas as pd
+from fastapi import FastAPI
 from datetime import datetime
-from sqlalchemy import create_engine, Column, String, Float, DateTime
-from sqlalchemy.ext.declarative import declarative_base
+from kafka import KafkaConsumer
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import create_engine, Column, String, Float, DateTime
+
+logging.basicConfig(level=logging.INFO)
 
 app = FastAPI()
 
@@ -61,5 +64,6 @@ def save_incident(data, anomaly_type):
         timestamp=datetime.utcnow()
     )
     session.add(incident)
+    logging.info(f"Incident has been saved: {incident.id}")
     session.commit()
     session.close()
