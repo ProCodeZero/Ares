@@ -16,7 +16,8 @@ services:
       timeout: 5s
       retries: 10
     depends_on:
-      - zookeeper
+      zookeeper:
+        condition: service_started
   postgres:
     image: postgres:latest
     environment:
@@ -34,7 +35,9 @@ services:
     ports:
       - '8001:8001'
     depends_on:
-      - kafka
+      kafka:
+        condition: service_healthy
+        restart: true
     environment:
       KAFKA_BROKER: kafka:9092
   analysis:
@@ -42,8 +45,11 @@ services:
     ports:
       - '8002:8002'
     depends_on:
-      - kafka
-      - postgres
+      kafka:
+        condition: service_healthy
+        restart: true
+      postgres:
+        condition: service_started
 
 volumes:
   postgres_data:
