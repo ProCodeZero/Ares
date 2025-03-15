@@ -1,0 +1,12 @@
+.inc-list {
+  width: 70%;
+}
+
+.inc-list li {
+  display: grid;
+  grid-template-columns: 30% 15% 15% 10% 10% 20%;
+}
+
+.inc-list li span {
+  text-align: center;
+}

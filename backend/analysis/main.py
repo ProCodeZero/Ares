@@ -2,21 +2,44 @@ import json
 import uuid
 import logging
 import asyncio
-from datetime import datetime
+from typing import List
 from fastapi import FastAPI
+from datetime import datetime
+from pydantic import BaseModel
 from aiokafka import AIOKafkaConsumer
-from sqlalchemy import create_engine, Column, String, Float, DateTime
-from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
+from fastapi.middleware.cors import CORSMiddleware
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import create_engine, Column, String, Float, DateTime
 from anomaly_rules import detect_speed_anomaly, detect_geofence_anomaly
 
 logging.basicConfig(level=logging.INFO)
 app = FastAPI()
 
+# Настройка CORS, удалить, когда буду запускать на NGINX
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost", "http://localhost:80"],  
+    allow_credentials=True,
+    allow_methods=["*"],  
+    allow_headers=["*"],  
+)
+
 # PostgreSQL
 engine = create_engine("postgresql://postgres:root@postgres:5432/ares_db")
 Base = declarative_base()
 Session = sessionmaker(bind=engine)
+
+class IncidentResponse (BaseModel):
+    id: str
+    device_id: str
+    anomaly_type: str
+    latitude: float
+    longitude: float
+    timestamp: datetime
+
+class Config:
+    orm_mode = True # Разрешает работу с SQLAlchemy моделями
 
 class Incident(Base):
     __tablename__ = "incidents"
@@ -67,3 +90,9 @@ def save_incident(data, anomaly_type):
 @app.on_event("startup")
 async def startup_event():
     asyncio.create_task(consume_messages())
+
+@app.get("/api/incidents", response_model=List[IncidentResponse])
+def get_incidents():
+    with Session() as session:
+        incidents = session.query(Incident).order_by(Incident.timestamp.desc()).all()
+        return incidents
