@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { Incident } from '../types/Incident';
 
-const incidents_url = 'http://localhost:8002';
+export const incidents_url = 'http://localhost:8002';
 
 export const fetchIncidents = async (
   setIncidents: React.Dispatch<React.SetStateAction<Incident[] | null>>

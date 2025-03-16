@@ -1,9 +1,9 @@
 import { Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts';
-import { Anomaly } from '../types/Anomaly';
+import { Incident } from '../types/Incident';
 
-export default function AnomalyChart({ data }: { data: Anomaly[] }) {
+export default function AnomalyChart({ incidents }: { incidents: Incident[] }) {
   return (
-    <LineChart width={600} height={300} data={data}>
+    <LineChart width={600} height={300} data={incidents}>
       <XAxis dataKey={'timestamp'} />
       <YAxis />
       <Tooltip />

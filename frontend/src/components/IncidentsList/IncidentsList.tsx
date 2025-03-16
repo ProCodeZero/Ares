@@ -1,15 +1,7 @@
-import { useEffect, useState } from 'react';
-import { fetchIncidents } from '../../api/incidentsApi';
 import { Incident } from '../../types/Incident';
 import styles from './incidentsList.module.css';
 
-export default function IncidentsList() {
-  const [incidents, setIncidents] = useState<Incident[] | null>(null);
-
-  useEffect(() => {
-    fetchIncidents(setIncidents);
-  }, []);
-
+export default function IncidentsList({ incidents }: { incidents: Incident[] }) {
   return (
     <>
       <h2>Incidents List</h2>
@@ -36,7 +28,7 @@ export default function IncidentsList() {
         </li>
         {incidents ? (
           incidents.map((incident) => (
-            <li key={incident.id}>
+            <li key={incident.id + incident.timestamp}>
               <span>{incident.id}</span>
               <span>{incident.device_id}</span>
               <span>{incident.anomaly_type}</span>

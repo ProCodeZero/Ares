@@ -51,15 +51,15 @@ services:
       postgres:
         condition: service_started
 
-  # frontend:
-  #   build: ./frontend
-  #   ports:
-  #     - '80:80'
-  #   depends_on:
-  #     data-ingestion:
-  #       condition: service_started
-  #     analysis:
-  #       condition: service_started
+  frontend:
+    build: ./frontend
+    ports:
+      - '80:80'
+    depends_on:
+      data-ingestion:
+        condition: service_started
+      analysis:
+        condition: service_started
 
 volumes:
   postgres_data:

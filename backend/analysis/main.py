@@ -1,45 +1,35 @@
 import json
-import uuid
 import logging
-import asyncio
-from typing import List
-from fastapi import FastAPI
+import uuid
 from datetime import datetime
-from pydantic import BaseModel
+from fastapi import FastAPI, WebSocket
 from aiokafka import AIOKafkaConsumer
-from sqlalchemy.orm import sessionmaker
+import asyncio
 from fastapi.middleware.cors import CORSMiddleware
-from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine, Column, String, Float, DateTime
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
+from typing import List
 from anomaly_rules import detect_speed_anomaly, detect_geofence_anomaly
 
 logging.basicConfig(level=logging.INFO)
 app = FastAPI()
 
-# Настройка CORS, удалить, когда буду запускать на NGINX
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost", "http://localhost:80"],  
+    allow_origins=["*"],  
     allow_credentials=True,
     allow_methods=["*"],  
     allow_headers=["*"],  
 )
 
+# WebSocket connections pool
+connected_clients: List[WebSocket] = []
+
 # PostgreSQL
 engine = create_engine("postgresql://postgres:root@postgres:5432/ares_db")
 Base = declarative_base()
 Session = sessionmaker(bind=engine)
-
-class IncidentResponse (BaseModel):
-    id: str
-    device_id: str
-    anomaly_type: str
-    latitude: float
-    longitude: float
-    timestamp: datetime
-
-class Config:
-    orm_mode = True # Разрешает работу с SQLAlchemy моделями
 
 class Incident(Base):
     __tablename__ = "incidents"
@@ -52,6 +42,17 @@ class Incident(Base):
 
 Base.metadata.create_all(engine)
 
+# WebSocket endpoint
+@app.websocket("/ws/incidents")
+async def websocket_endpoint(websocket: WebSocket):
+    await websocket.accept()
+    connected_clients.append(websocket)
+    try:
+        while True:
+            await websocket.receive_text()
+    except Exception:
+        connected_clients.remove(websocket)
+
 async def consume_messages():
     consumer = AIOKafkaConsumer(
         'gps_topic',
@@ -62,14 +63,21 @@ async def consume_messages():
     try:
         async for message in consumer:
             data = message.value
-            if detect_speed_anomaly(data['speed']):
-                save_incident(data, "speed_anomaly")
-            if detect_geofence_anomaly(data['latitude'], data['longitude']):
-                save_incident(data, "geofence_anomaly")
+            incident_data = process_anomaly(data)
+            if incident_data:
+                await notify_clients(incident_data)
     finally:
         await consumer.stop()
 
-def save_incident(data, anomaly_type):
+def process_anomaly(data: dict):
+    incident_data = None
+    if detect_speed_anomaly(data['speed']):
+        incident_data = save_incident(data, "speed_anomaly")
+    elif detect_geofence_anomaly(data['latitude'], data['longitude']):
+        incident_data = save_incident(data, "geofence_anomaly")
+    return incident_data  # Теперь это словарь
+
+def save_incident(data: dict, anomaly_type: str):
     with Session() as session:
         incident = Incident(
             id=str(uuid.uuid4()),
@@ -80,19 +88,21 @@ def save_incident(data, anomaly_type):
             timestamp=datetime.utcnow()
         )
         session.add(incident)
-        try:
-            session.commit()
-            logging.info(f"Incident saved: {incident.id}")
-        except Exception as e:
-            session.rollback()
-            logging.error(f"Failed to save incident: {e}")
+        session.commit()
+        incident_data = {
+            "id": incident.id,
+            "device_id": incident.device_id,
+            "anomaly_type": anomaly_type,
+            "latitude": incident.latitude,
+            "longitude": incident.longitude,
+            "timestamp": incident.timestamp.isoformat()
+        }
+        return incident_data
+
+async def notify_clients(incident_data: dict):  # Теперь принимаем словарь
+    for client in connected_clients:
+        await client.send_json(incident_data)
 
 @app.on_event("startup")
 async def startup_event():
     asyncio.create_task(consume_messages())
-
-@app.get("/api/incidents", response_model=List[IncidentResponse])
-def get_incidents():
-    with Session() as session:
-        incidents = session.query(Incident).order_by(Incident.timestamp.desc()).all()
-        return incidents
