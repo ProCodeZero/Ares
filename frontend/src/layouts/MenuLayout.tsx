@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useEffect, useState } from 'react';
 import AnomalyChart from '../components/AnomalyChart';
 import IncidentsList from '../components/IncidentsList/IncidentsList';
@@ -7,6 +8,18 @@ import styles from './menuLayout.module.css';
 
 export default function MenuLayout() {
   const [incidents, setIncidents] = useState<Incident[]>([]);
+
+  useEffect(() => {
+    const getIncidents = async () => {
+      try {
+        const { data } = await axios.get('http://localhost:8002/api/incidents');
+        setIncidents(data);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    getIncidents();
+  });
 
   useEffect(() => {
     const ws = new WebSocket('ws://localhost:8002/ws/incidents');

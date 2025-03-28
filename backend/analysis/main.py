@@ -42,6 +42,22 @@ class Incident(Base):
 
 Base.metadata.create_all(engine)
 
+@app.get("/api/incidents", response_model=List[dict])
+async def get_all_incidents():
+    with Session() as session:
+        incidents = session.query(Incident).all()
+        return [
+            {
+                "id": incident.id,
+                "device_id": incident.device_id,
+                "anomaly_type": incident.anomaly_type,
+                "latitude": incident.latitude,
+                "longitude": incident.longitude,
+                "timestamp": incident.timestamp.isoformat()
+            }
+            for incident in incidents
+        ]
+
 # WebSocket endpoint
 @app.websocket("/ws/incidents")
 async def websocket_endpoint(websocket: WebSocket):
