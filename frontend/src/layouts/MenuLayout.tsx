@@ -19,29 +19,28 @@ export default function MenuLayout() {
       }
     };
     getIncidents();
-  });
+  }, []);
 
   useEffect(() => {
     const ws = new WebSocket('ws://localhost:8002/ws/incidents');
+    let isMounted = true;
 
-    ws.onopen = () => {
-      console.log('WebSocket connected');
-    };
+    ws.onopen = () => console.log('WebSocket connected');
 
     ws.onmessage = (event) => {
+      if (!isMounted) return;
       const newIncident = JSON.parse(event.data);
-      setIncidents((prev) => [...prev, newIncident]);
+      setIncidents((prev) => {
+        if (prev.some((inc) => inc.id === newIncident.id)) return prev;
+        return [...prev, newIncident];
+      });
     };
 
-    ws.onerror = (error) => {
-      console.error('WebSocket Error:', error);
-    };
-
-    ws.onclose = () => {
-      console.log('WebSocket disconnected');
-    };
+    ws.onerror = (error) => console.error('WebSocket Error:', error);
+    ws.onclose = () => console.log('WebSocket disconnected');
 
     return () => {
+      isMounted = false;
       ws.close();
     };
   }, []);

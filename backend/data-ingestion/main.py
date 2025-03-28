@@ -2,8 +2,10 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from kafka import KafkaProducer
 import json
+from prometheus_fastapi_instrumentator import Instrumentator
 
 app = FastAPI()
+Instrumentator().instrument(app).expose(app, endpoint="/metrics")
 
 # Модель данных для GPS
 class GPSData(BaseModel):
